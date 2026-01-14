@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-  # MySQL Database (Producción)
   mysql:
     image: mysql:8.0
     container_name: mysql-db
@@ -23,7 +22,6 @@ services:
       timeout: 3s
       retries: 10
 
-  # MySQL Database (Espejo/Backup)
   mysql-mirror:
     image: mysql:8.0
     container_name: mysql-mirror-db
@@ -45,7 +43,6 @@ services:
       timeout: 3s
       retries: 10
 
-  # Redis Cache
   redis:
     image: redis:7-alpine
     container_name: redis-cache
@@ -59,7 +56,6 @@ services:
       timeout: 3s
       retries: 5
 
-  # Backend Laravel
   backend:
     build:
       context: ./Proyectito-webxd-main
