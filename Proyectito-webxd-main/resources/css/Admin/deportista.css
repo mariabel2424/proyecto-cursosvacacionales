@@ -1,0 +1,1344 @@
+/* ADMIN DEPORTISTAS CSS */
+
+/* Contenedor principal */
+.deportista-container {
+  height: 80vh;
+  width: 1300px;
+  background-color: #f8fafc;
+}
+
+.deportista-content {
+  flex: 1;
+  margin-left: 150px;
+  padding: 1.5rem;
+  width: 95%;
+}
+
+/* Header */
+.deportista-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.deportista-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.deportista-subtitle {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+.deportista-header-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  margin-right: 70px;
+}
+
+/* Botones generales */
+.deportista-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.deportista-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.deportista-btn-primary {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.deportista-btn-primary:hover:not(:disabled) {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+.deportista-btn-secondary {
+  background-color: white;
+  color: #475569;
+  border-color: #cbd5e1;
+}
+
+.deportista-btn-secondary:hover:not(:disabled) {
+  background-color: #f1f5f9;
+}
+
+.deportista-btn-success {
+  background-color: #10b981;
+  color: white;
+  border-color: #10b981;
+}
+
+.deportista-btn-success:hover:not(:disabled) {
+  background-color: #059669;
+  border-color: #059669;
+}
+
+.deportista-btn-warning {
+  background-color: #f59e0b;
+  color: white;
+  border-color: #f59e0b;
+}
+
+.deportista-btn-warning:hover:not(:disabled) {
+  background-color: #d97706;
+  border-color: #d97706;
+}
+
+.deportista-btn-danger {
+  background-color: #ef4444;
+  color: white;
+  border-color: #ef4444;
+}
+
+.deportista-btn-danger:hover:not(:disabled) {
+  background-color: #dc2626;
+  border-color: #dc2626;
+}
+
+.deportista-btn-sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8125rem;
+}
+
+.deportista-btn-icon {
+  padding: 0.625rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* Estadísticas */
+.deportista-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.deportista-stat-card {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.deportista-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+.deportista-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.deportista-stat-number {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.deportista-stat-label {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* Barra de herramientas */
+.deportista-toolbar {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.deportista-toolbar-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.deportista-search-container {
+  flex: 1;
+  min-width: 300px;
+}
+
+.deportista-search {
+  position: relative;
+}
+
+.deportista-search-icon {
+  position: absolute;
+  left: 0.875rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.deportista-search-input {
+  width: 100%;
+  padding: 0.625rem 1rem 0.625rem 2.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  transition: border-color 0.2s ease;
+  background-color: white;
+}
+
+.deportista-search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.deportista-search-input:disabled {
+  background-color: #f1f5f9;
+  cursor: not-allowed;
+}
+
+.deportista-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.deportista-filter-select {
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  background-color: white;
+  color: #475569;
+  min-width: 140px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.deportista-filter-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.deportista-filter-select:disabled {
+  background-color: #f1f5f9;
+  cursor: not-allowed;
+}
+
+/* Acciones masivas */
+.deportista-toolbar-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.deportista-bulk-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.deportista-bulk-info {
+  font-size: 0.875rem;
+  color: #475569;
+  margin-right: 0.5rem;
+}
+
+.deportista-action-buttons {
+  display: flex;
+  gap: 0.25rem;
+}
+
+/* Tabla */
+.deportista-table-container {
+  background: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.deportista-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.deportista-table thead {
+  background-color: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.deportista-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #475569;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.deportista-table tbody tr {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+.deportista-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.deportista-table tbody tr.selected {
+  background-color: #eff6ff;
+}
+
+.deportista-table td {
+  padding: 1rem;
+  color: #334155;
+  font-size: 0.875rem;
+  vertical-align: middle;
+}
+
+/* Checkbox */
+.deportista-checkbox {
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 0.25rem;
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+  appearance: none;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.deportista-checkbox:checked {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.deportista-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.deportista-checkbox:disabled {
+  background-color: #f1f5f9;
+  cursor: not-allowed;
+}
+
+/* Badges */
+.deportista-estado-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid;
+}
+
+.deportista-genero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid;
+}
+
+.deportista-posicion-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Foto en tabla */
+.deportista-foto {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+}
+
+.deportista-foto-placeholder {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  border: 2px solid #e2e8f0;
+}
+
+/* Botones de acción en tabla */
+.deportista-btn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.375rem;
+  border: 1px solid #cbd5e1;
+  background-color: white;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.deportista-btn-action:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.deportista-btn-view:hover {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.deportista-btn-edit:hover {
+  background-color: #fef3c7;
+  color: #d97706;
+  border-color: #fde68a;
+}
+
+.deportista-btn-primary:hover {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.deportista-btn-danger:hover {
+  background-color: #fee2e2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+/* Paginación */
+.deportista-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+}
+
+.deportista-pagination-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  background-color: white;
+  color: #475569;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.deportista-pagination-btn:hover:not(:disabled) {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.deportista-pagination-btn.active {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.deportista-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.deportista-pagination-ellipsis {
+  padding: 0.625rem;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+/* Estados de carga y error */
+.deportista-loading,
+.deportista-error,
+.deportista-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.deportista-loading-spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid #e2e8f0;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: deportistaSpin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes deportistaSpin {
+  to { transform: rotate(360deg); }
+}
+
+.deportista-error-icon,
+.deportista-empty-state-icon {
+  color: #dc2626;
+  margin-bottom: 1rem;
+}
+
+.deportista-empty-state-icon {
+  color: #94a3b8;
+}
+
+.deportista-error h3,
+.deportista-empty-state h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.deportista-error p,
+.deportista-empty-state p {
+  color: #64748b;
+  max-width: 400px;
+}
+
+/* Modales */
+.deportista-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: deportistaFadeIn 0.2s ease;
+}
+
+@keyframes deportistaFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.deportista-modal {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: deportistaSlideIn 0.3s ease;
+}
+
+@keyframes deportistaSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.deportista-modal-sm {
+  width: 400px;
+  max-width: 100%;
+}
+
+.deportista-modal-lg {
+  width: 800px;
+  max-width: 100%;
+}
+
+.deportista-modal-xl {
+  width: 900px;
+  max-width: 100%;
+}
+
+.deportista-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.deportista-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.deportista-modal-header-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.deportista-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.deportista-modal-close:hover {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.deportista-modal-content {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.deportista-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Secciones de formulario */
+.deportista-form-section {
+  margin-bottom: 2rem;
+}
+
+.deportista-form-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.deportista-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.deportista-form-grid-inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* Formularios */
+.deportista-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.deportista-form-group.col-span-2 {
+  grid-column: span 2;
+}
+
+.deportista-form-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: #475569;
+  font-size: 0.875rem;
+}
+
+.deportista-form-input,
+.deportista-form-select,
+.deportista-form-textarea {
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  background-color: white;
+  color: #334155;
+  transition: all 0.2s ease;
+}
+
+.deportista-form-input:focus,
+.deportista-form-select:focus,
+.deportista-form-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.deportista-form-input.error,
+.deportista-form-select.error {
+  border-color: #ef4444;
+}
+
+.deportista-form-input.error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.deportista-form-error {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.deportista-form-textarea {
+  resize: vertical;
+  min-height: 5rem;
+}
+
+/* Subida de foto */
+.deportista-foto-upload-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 0.5rem;
+  border: 2px dashed #cbd5e1;
+}
+
+.deportista-foto-preview {
+  width: 120px;
+  height: 120px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 2px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.deportista-foto-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.deportista-foto-placeholder-large {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e2e8f0;
+  color: #94a3b8;
+}
+
+.deportista-file-input {
+  display: none;
+}
+
+.deportista-file-hint {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+/* Posiciones */
+.deportista-posiciones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.deportista-posicion-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.deportista-posicion-checkbox:hover {
+  background-color: #f1f5f9;
+}
+
+.deportista-posicion-checkbox.selected {
+  background-color: #dbeafe;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+}
+
+/* Detalles del deportista */
+.deportista-detail-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.deportista-detail-foto {
+  width: 120px;
+  height: 120px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 3px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.deportista-detail-foto-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.deportista-detail-foto-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.deportista-detail-header-info {
+  flex: 1;
+}
+
+.deportista-detail-name-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.deportista-detail-name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.deportista-detail-subtitle {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.deportista-detail-subtitle-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.deportista-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.deportista-detail-section {
+  background: #f8fafc;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  border: 1px solid #e2e8f0;
+}
+
+.deportista-detail-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #475569;
+  margin: 0 0 1rem 0;
+}
+
+.deportista-detail-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.deportista-detail-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deportista-detail-info-label {
+  font-weight: 500;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.deportista-detail-info-value {
+  font-weight: 500;
+  color: #334155;
+  font-size: 0.875rem;
+}
+
+.deportista-detail-info-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.deportista-detail-info-link:hover {
+  text-decoration: underline;
+}
+
+/* Lista de posiciones */
+.deportista-posiciones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.deportista-posicion-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: white;
+  border-radius: 0.375rem;
+  border: 1px solid #e2e8f0;
+  font-size: 0.875rem;
+}
+
+.deportista-no-posiciones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  color: #94a3b8;
+}
+
+/* Club actual */
+.deportista-club-actual {
+  padding: 1rem;
+  background: white;
+  border-radius: 0.5rem;
+  border: 2px solid #e2e8f0;
+}
+
+.deportista-club-actual-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.deportista-club-actual-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.deportista-club-actual-date,
+.deportista-club-actual-number {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.deportista-no-club {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  color: #94a3b8;
+}
+
+/* Estadísticas */
+.deportista-estadisticas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.deportista-estadistica-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: #f8fafc;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s ease;
+}
+
+.deportista-estadistica-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.deportista-estadistica-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.deportista-estadistica-content {
+  flex: 1;
+}
+
+.deportista-estadistica-title {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 0 0.25rem 0;
+}
+
+.deportista-estadistica-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+/* Lesiones */
+.deportista-lesiones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.deportista-lesion-item {
+  padding: 1.25rem;
+  background: #fef3c7;
+  border-radius: 0.5rem;
+  border: 1px solid #fde68a;
+}
+
+.deportista-lesion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.deportista-lesion-tipo {
+  font-weight: 600;
+  color: #92400e;
+  font-size: 1rem;
+}
+
+.deportista-lesion-estado .deportista-estado-badge.activa {
+  background-color: #fee2e2;
+  color: #dc2626;
+  border-color: #dc2626;
+}
+
+.deportista-lesion-fecha {
+  font-size: 0.875rem;
+  color: #92400e;
+  margin-bottom: 0.5rem;
+}
+
+.deportista-lesion-descripcion {
+  font-size: 0.875rem;
+  color: #92400e;
+  line-height: 1.5;
+}
+
+.deportista-no-lesiones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.deportista-no-lesiones h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #64748b;
+  margin: 0;
+}
+
+.deportista-no-lesiones p {
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Contenido de eliminación */
+.deportista-delete-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.deportista-delete-icon {
+  color: #f59e0b;
+}
+
+.deportista-delete-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.deportista-delete-message {
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.deportista-delete-warning {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Utilidades */
+.hidden {
+  display: none !important;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-secondary {
+  color: #64748b;
+}
+
+.animate-spin {
+  animation: deportistaSpin 1s linear infinite;
+}
+
+.sort-indicator {
+  font-size: 0.875rem;
+  color: #3b82f6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .deportista-form-grid-inner {
+    grid-template-columns: 1fr;
+  }
+  
+  .deportista-form-group.col-span-2 {
+    grid-column: span 1;
+  }
+  
+  .deportista-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .deportista-toolbar-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .deportista-search-container {
+    min-width: auto;
+  }
+  
+  .deportista-filters {
+    justify-content: flex-start;
+  }
+  
+  .deportista-detail-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .deportista-estadisticas-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .deportista-detail-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .deportista-detail-name-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .deportista-detail-subtitle {
+    justify-content: center;
+  }
+  
+  .deportista-posiciones-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .deportista-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .deportista-modal {
+    width: 95vw !important;
+  }
+  
+  .deportista-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .deportista-bulk-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .deportista-toolbar-actions {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .deportista-header-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .deportista-detail-subtitle {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+}
+
+/* Scrollbar personalizado */
+.deportista-lesiones-list::-webkit-scrollbar,
+.deportista-modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.deportista-lesiones-list::-webkit-scrollbar-track,
+.deportista-modal-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.deportista-lesiones-list::-webkit-scrollbar-thumb,
+.deportista-modal-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.deportista-lesiones-list::-webkit-scrollbar-thumb:hover,
+.deportista-modal-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

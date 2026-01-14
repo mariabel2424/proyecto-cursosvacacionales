@@ -1,0 +1,134 @@
+version: '3.8'
+
+services:
+  # MySQL Database (Producción)
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-db
+    ports:
+      - "3308:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: laravel_db
+      MYSQL_USER: laravel_user
+      MYSQL_PASSWORD: laravel_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  # MySQL Database (Espejo/Backup)
+  mysql-mirror:
+    image: mysql:8.0
+    container_name: mysql-mirror-db
+    ports:
+      - "3309:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: laravel_db_mirror
+      MYSQL_USER: laravel_user
+      MYSQL_PASSWORD: laravel_password
+    volumes:
+      - mysql_mirror_data:/var/lib/mysql
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: redis-cache
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # Backend Laravel
+  backend:
+    build:
+      context: ./Proyectito-webxd-main
+      dockerfile: Dockerfile
+    container_name: laravel-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=Laravel
+      - APP_ENV=production
+      - APP_DEBUG=false
+      - APP_URL=http://backend:8000
+      - DB_CONNECTION=mysql
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_DATABASE=laravel_db
+      - DB_USERNAME=laravel_user
+      - DB_PASSWORD=laravel_password
+      - DB_MIRROR_HOST=mysql-mirror
+      - DB_MIRROR_PORT=3306
+      - DB_MIRROR_DATABASE=laravel_db_mirror
+      - DB_MIRROR_USERNAME=laravel_user
+      - DB_MIRROR_PASSWORD=laravel_password
+      - SESSION_DRIVER=database
+      - CACHE_STORE=redis
+      - QUEUE_CONNECTION=database
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - MAIL_MAILER=log
+    volumes:
+      - ./Proyectito-webxd-main:/app
+      - ./Proyectito-webxd-main/storage:/app/storage
+    depends_on:
+      mysql:
+        condition: service_healthy
+      mysql-mirror:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - app-network
+    restart: on-failure
+
+  # Frontend Next.js
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: nextjs-frontend
+    ports:
+      - "3001:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://backend:8000/api
+      - NODE_ENV=production
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+      - /app/.pnpm-store
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    restart: on-failure
+
+volumes:
+  mysql_data:
+  mysql_mirror_data:
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,484 @@
+/* ===== Reset básico ===== */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background: #f4f6f9;
+  color: #1f2933;
+}
+
+/* ===== Contenedor principal ===== */
+.estudiante-panel {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f4f6ff, #fdf2ff);
+}
+
+/* ===== Header ===== */
+.header {
+  background: #658ea8;
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.header-link-btn {
+  background: transparent;
+  border: none;
+  color: #e5f2ff;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 999px;
+  transition: background 0.2s ease, transform 0.1s ease, color 0.2s ease;
+}
+
+.header-link-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+.logout-btn {
+  background: #e76f7b;
+  border: none;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+  transition: background 0.2s ease, transform 0.1s ease,
+    box-shadow 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #dd4a5a;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.22);
+}
+
+/* ===== Contenido centrado ===== */
+.contenido-principal {
+  flex: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Sección de bienvenida ===== */
+.bienvenida {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 18px;
+}
+
+.bienvenida h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+.bienvenida h2 span {
+  color: #658ea8;
+}
+
+.bienvenida p {
+  font-size: 0.98rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* ===== Grid de tarjetas ===== */
+.panel-contenido {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin-top: 18px;
+}
+
+.tarjeta {
+  background: #ffffff;
+  padding: 22px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+  text-align: left;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  border: 3px solid #e5e7ff;
+  cursor: default;
+}
+
+.tarjeta-accion {
+  cursor: pointer;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.18);
+}
+
+.tarjeta h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #2f3c4f;
+}
+
+.tarjeta p {
+  font-size: 0.94rem;
+  margin-bottom: 14px;
+  color: #687280;
+}
+
+.tarjeta button {
+  display: inline-block;
+  background: #da9abf;
+  color: #ffffff;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(148, 116, 182, 0.3);
+}
+
+.tarjeta button:hover {
+  background: #c17db7;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(148, 116, 182, 0.45);
+}
+
+/* ===== Footer ===== */
+footer {
+  padding: 16px 20px;
+  background: #658ea8;
+  color: #f9fafb;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ===== Modal: overlay ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+}
+
+/* ===== Modal: contenido ===== */
+.modal-content {
+  background: #ffffff;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 520px;
+  padding: 22px 24px 24px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+  border: 4px solid #e5e7ff;
+  animation: modal-aparecer 0.18s ease-out;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.modal-header h3 {
+  font-size: 1.2rem;
+  color: #2f3c4f;
+}
+
+.modal-close-btn {
+  background: #f3f4ff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #4b5563;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.modal-close-btn:hover {
+  background: #e0e4ff;
+  transform: translateY(-1px);
+}
+
+.modal-body {
+  margin-top: 6px;
+}
+
+/* ===== Texto dentro de los modales ===== */
+.modal-texto-intro {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+/* ===== Formulario registrar curso ===== */
+.form-registrar-curso {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.campo select {
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  padding: 9px 10px;
+  font-size: 0.9rem;
+  background-color: #f7f8fc;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.campo select:focus {
+  outline: none;
+  border-color: #658ea8;
+  box-shadow: 0 0 0 3px rgba(101, 142, 168, 0.25);
+  background-color: #ffffff;
+}
+
+.campo select:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.mensaje-curso-ok {
+  margin-top: 4px;
+  font-size: 0.88rem;
+  color: #166534;
+  background-color: #e3fcef;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+/* ===== Botones del modal ===== */
+.modal-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.modal-actions button {
+  min-width: 130px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease,
+    box-shadow 0.2s ease;
+}
+
+.modal-actions button[type="submit"] {
+  background: #da9abf;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(148, 116, 182, 0.35);
+}
+
+.modal-actions button[type="submit"]:hover {
+  background: #c17db7;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(148, 116, 182, 0.55);
+}
+
+.btn-secundario {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.btn-secundario:hover {
+  background: #d1d5db;
+  transform: translateY(-1px);
+}
+
+/* ===== Listas de cursos actuales ===== */
+.lista-cursos {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lista-cursos li {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f5f7ff;
+  border: 1px solid #e0e7ff;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.lista-cursos h4 {
+  margin: 0;
+  font-size: 0.98rem;
+  color: #1f2937;
+}
+
+.lista-cursos span {
+  font-size: 0.86rem;
+  color: #6b7280;
+}
+
+/* ===== Historial de cursos ===== */
+.lista-historial {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lista-historial li {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #fef9c3;
+  border: 1px solid #fde68a;
+}
+
+.historial-nombre {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: #92400e;
+}
+
+.historial-detalle {
+  font-size: 0.86rem;
+  color: #92400e;
+}
+
+/* ===== Perfil en modal ===== */
+.perfil-resumen {
+  margin: 10px 0 14px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.perfil-resumen p {
+  margin: 3px 0;
+}
+
+.perfil-recomendaciones h4 {
+  font-size: 0.96rem;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+.perfil-recomendaciones ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.88rem;
+  color: #4b5563;
+}
+
+/* ===== Animación modal ===== */
+@keyframes modal-aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .header-inner {
+    padding-inline: 14px;
+  }
+
+  .contenido-principal {
+    padding-inline: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .header nav ul {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .bienvenida h2 {
+    font-size: 1.7rem;
+  }
+
+  .modal-content {
+    margin: 0 14px;
+    padding: 18px 18px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tarjeta {
+    padding: 18px 16px;
+  }
+}

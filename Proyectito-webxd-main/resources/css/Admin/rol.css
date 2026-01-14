@@ -1,0 +1,1381 @@
+/* rol.css */
+/* Estilos para el componente Rol - Diseño consistente con Usuario */
+
+/* ================= VARIABLES Y ESTILOS GLOBALES ================= */
+:root {
+  --primary-color: #3b82f6;
+  --primary-dark: #2563eb;
+  --primary-light: #dbeafe;
+  --danger-color: #ef4444;
+  --danger-dark: #dc2626;
+  --danger-light: #fee2e2;
+  --success-color: #10b981;
+  --success-dark: #059669;
+  --success-light: #d1fae5;
+  --warning-color: #f59e0b;
+  --warning-dark: #d97706;
+  --warning-light: #fef3c7;
+  --info-color: #8b5cf6;
+  --info-light: #ede9fe;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --text-primary: var(--gray-900);
+  --text-secondary: var(--gray-600);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --radius: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --transition: all 0.2s ease;
+}
+
+/* ================= CONTENEDOR PRINCIPAL ================= */
+.rol-container {
+  height: 80vh;
+  width: 1500px;
+  background-color: var(--gray-100);
+}
+
+.rol-content {
+  padding: 1.5rem;
+  flex: 1;
+  width: calc(100% - 250px);
+  margin-left: 250px;
+}
+
+/* ================= HEADER ================= */
+.rol-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.rol-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rol-subtitle {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  margin-top: 0.25rem;
+}
+
+.rol-btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 500;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  white-space: nowrap;
+}
+
+.rol-btn-primary:hover {
+  background-color: var(--primary-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.rol-btn-primary:active {
+  transform: translateY(0);
+}
+
+.rol-btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: white;
+  color: var(--text-secondary);
+  font-weight: 500;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-300);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.rol-btn-secondary:hover {
+  background-color: var(--gray-50);
+  color: var(--text-primary);
+}
+
+.rol-btn-danger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--danger-color);
+  color: white;
+  font-weight: 500;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.rol-btn-danger:hover {
+  background-color: var(--danger-dark);
+}
+
+.rol-btn-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  background-color: var(--gray-100);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-300);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.rol-btn-small:hover {
+  background-color: var(--gray-200);
+}
+
+/* ================= ESTADÍSTICAS ================= */
+.rol-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.rol-stat-card {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: var(--transition);
+}
+
+.rol-stat-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.rol-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+.rol-stat-number {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  margin: 0;
+}
+
+.rol-stat-label {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  margin: 0.25rem 0 0 0;
+}
+
+/* ================= FILTROS Y BÚSQUEDA ================= */
+.rol-actions-container {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.rol-search-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.rol-search-input {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  padding: 0.625rem 1rem;
+  transition: var(--transition);
+}
+
+.rol-search-input:focus-within {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.rol-search-input input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  min-width: 0;
+}
+
+.rol-search-input input::placeholder {
+  color: var(--gray-400);
+}
+
+.rol-filter-group {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rol-filter-select {
+  padding: 0.625rem 2rem 0.625rem 0.75rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition);
+  min-width: 160px;
+}
+
+.rol-filter-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.rol-sort-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  background-color: white;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.rol-sort-btn:hover {
+  background-color: var(--gray-50);
+}
+
+/* ================= ACCIONES MASIVAS ================= */
+.rol-bulk-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--primary-light);
+  border-radius: var(--radius);
+  border: 1px solid var(--primary-color);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.rol-bulk-selected {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary-dark);
+  flex: 1;
+}
+
+.rol-bulk-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.rol-bulk-btn-activate {
+  background-color: var(--success-light);
+  color: var(--success-dark);
+}
+
+.rol-bulk-btn-activate:hover {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.rol-bulk-btn-deactivate {
+  background-color: var(--warning-light);
+  color: var(--warning-dark);
+}
+
+.rol-bulk-btn-deactivate:hover {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.rol-bulk-btn-danger {
+  background-color: var(--danger-light);
+  color: var(--danger-dark);
+}
+
+.rol-bulk-btn-danger:hover {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.rol-actions-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.rol-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-300);
+  background-color: white;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.rol-action-btn:hover {
+  background-color: var(--gray-50);
+  color: var(--text-primary);
+}
+
+.rol-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ================= TABLA DE ROLES ================= */
+.rol-table-container {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.rol-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1000px;
+}
+
+.rol-table thead {
+  background-color: var(--gray-50);
+  border-bottom: 2px solid var(--gray-200);
+}
+
+.rol-table th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.rol-table th:hover {
+  background-color: var(--gray-100);
+}
+
+.rol-table tbody tr {
+  border-bottom: 1px solid var(--gray-200);
+  transition: var(--transition);
+}
+
+.rol-table tbody tr:hover {
+  background-color: var(--gray-50);
+}
+
+.rol-table tbody tr.rol-row-selected {
+  background-color: var(--primary-light);
+}
+
+.rol-table td {
+  padding: 1rem 1.25rem;
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+/* ================= CHECKBOX ================= */
+.rol-checkbox {
+  width: 1rem;
+  height: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-400);
+  background-color: white;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.rol-checkbox:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* ================= AVATAR DE ROL ================= */
+.rol-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+.rol-avatar-active {
+  background-color: var(--success-light);
+  color: var(--success-dark);
+}
+
+.rol-avatar-inactive {
+  background-color: var(--danger-light);
+  color: var(--danger-dark);
+}
+
+/* ================= SLUG ================= */
+.rol-slug {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 0.75rem;
+  background-color: var(--gray-100);
+  color: var(--gray-700);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-300);
+}
+
+/* ================= ESTADO ================= */
+.rol-status-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.rol-status-active {
+  background-color: var(--success-light);
+  color: var(--success-dark);
+}
+
+.rol-status-active:hover {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.rol-status-inactive {
+  background-color: var(--danger-light);
+  color: var(--danger-dark);
+}
+
+.rol-status-inactive:hover {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.rol-status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+
+/* ================= TOOLTIP ================= */
+.rol-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.rol-tooltip-content {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--gray-800);
+  color: white;
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  pointer-events: none;
+  box-shadow: var(--shadow-md);
+  min-width: 200px;
+}
+
+.rol-tooltip:hover .rol-tooltip-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.rol-tooltip-item {
+  padding: 0.25rem 0;
+  border-bottom: 1px solid var(--gray-700);
+}
+
+.rol-tooltip-item:last-child {
+  border-bottom: none;
+}
+
+/* ================= ACCIONES ================= */
+.rol-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.rol-btn-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-secondary);
+  background-color: transparent;
+}
+
+.rol-btn-action:hover {
+  background-color: var(--gray-100);
+}
+
+.rol-btn-view:hover {
+  color: var(--info-color);
+}
+
+.rol-btn-edit:hover {
+  color: var(--primary-color);
+}
+
+.rol-btn-delete:hover {
+  color: var(--danger-color);
+}
+
+/* ================= PAGINACIÓN ================= */
+.rol-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  flex-wrap: wrap;
+}
+
+.rol-pagination-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  background-color: white;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.rol-pagination-btn:hover:not(:disabled) {
+  background-color: var(--gray-50);
+  border-color: var(--gray-400);
+}
+
+.rol-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.rol-pagination-pages {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.rol-pagination-page {
+  min-width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-300);
+  background-color: white;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.rol-pagination-page:hover {
+  background-color: var(--gray-50);
+}
+
+.rol-pagination-active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.rol-pagination-active:hover {
+  background-color: var(--primary-dark);
+}
+
+.rol-pagination-info {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  text-align: right;
+}
+
+/* ================= MODAL ================= */
+.rol-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.rol-modal {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { 
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rol-modal-sm {
+  max-width: 28rem;
+}
+
+.rol-modal-lg {
+  max-width: 56rem;
+}
+
+.rol-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.rol-modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.rol-modal-subtitle {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  margin: 0.25rem 0 0 0;
+}
+
+.rol-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--gray-500);
+  transition: var(--transition);
+}
+
+.rol-modal-close:hover {
+  background-color: var(--gray-100);
+  color: var(--text-primary);
+}
+
+.rol-modal-body {
+  padding: 1.5rem;
+  max-height: calc(90vh - 200px);
+  overflow-y: auto;
+}
+
+.rol-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+/* ================= FORMULARIO ================= */
+.rol-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.rol-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.rol-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.rol-form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.rol-form-input, .rol-form-textarea {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  transition: var(--transition);
+  resize: vertical;
+}
+
+.rol-form-input:focus, .rol-form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.rol-form-help {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  margin-top: 0.25rem;
+}
+
+.rol-form-error {
+  font-size: 0.75rem;
+  color: var(--danger-color);
+  margin-top: 0.25rem;
+}
+
+/* ================= SWITCH PARA ESTADO ================= */
+.rol-switch-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.rol-switch-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  background-color: white;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: var(--transition);
+  flex: 1;
+  justify-content: center;
+}
+
+.rol-switch-active {
+  background-color: var(--success-light);
+  color: var(--success-dark);
+  border-color: var(--success-color);
+  font-weight: 500;
+}
+
+.rol-switch-inactive {
+  background-color: var(--danger-light);
+  color: var(--danger-dark);
+  border-color: var(--danger-color);
+  font-weight: 500;
+}
+
+/* ================= PERMISOS ================= */
+.rol-permissions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.75rem;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 0.5rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  background-color: var(--gray-50);
+}
+
+.rol-permission-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  background-color: white;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.rol-permission-item:hover {
+  border-color: var(--primary-color);
+  background-color: var(--gray-50);
+}
+
+.rol-permission-selected {
+  border-color: var(--primary-color);
+  background-color: var(--primary-light);
+}
+
+.rol-permission-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--primary-color);
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.rol-permission-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.rol-permission-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.rol-permission-module {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.rol-permission-action {
+  color: var(--gray-700);
+}
+
+.rol-permission-desc {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  line-height: 1.4;
+}
+
+.rol-no-permissions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.rol-permissions-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--gray-50);
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-300);
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.rol-permissions-count {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.rol-permissions-categories {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.rol-permission-category {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background-color: white;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  color: var(--gray-700);
+}
+
+/* ================= DETALLES ================= */
+.rol-detail-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.rol-detail-card {
+  background-color: var(--gray-50);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  padding: 1.5rem;
+}
+
+.rol-detail-card-full {
+  grid-column: 1 / -1;
+}
+
+.rol-detail-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+}
+
+.rol-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rol-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.rol-detail-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  min-width: 120px;
+}
+
+.rol-detail-value {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.rol-detail-code {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 0.875rem;
+  background-color: white;
+  color: var(--gray-700);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-300);
+}
+
+.rol-detail-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.rol-detail-status-active {
+  background-color: var(--success-light);
+  color: var(--success-dark);
+}
+
+.rol-detail-status-inactive {
+  background-color: var(--danger-light);
+  color: var(--danger-dark);
+}
+
+.rol-detail-description {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.rol-detail-permissions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rol-detail-permission {
+  background-color: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.rol-detail-permission-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.rol-detail-permission-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.rol-detail-permission-desc {
+  font-size: 0.75rem;
+  color: var(--gray-600);
+  line-height: 1.4;
+}
+
+.rol-detail-users {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rol-detail-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background-color: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+}
+
+.rol-detail-user-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  font-weight: 600;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.rol-detail-user-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.rol-detail-user-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.rol-detail-user-email {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+.rol-detail-user-status {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.rol-detail-more {
+  text-align: center;
+  padding: 0.75rem;
+  background-color: var(--gray-50);
+  border-radius: var(--radius);
+  border: 1px dashed var(--gray-300);
+}
+
+/* ================= ELIMINAR ================= */
+.rol-delete-warning {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rol-delete-message {
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.rol-delete-alert {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: var(--warning-light);
+  border: 1px solid var(--warning-color);
+  border-radius: var(--radius);
+  color: var(--warning-dark);
+  font-size: 0.875rem;
+}
+
+.rol-delete-details {
+  background-color: var(--gray-50);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.rol-delete-details p {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.rol-delete-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.rol-delete-list li {
+  margin-bottom: 0.25rem;
+}
+
+/* ================= BADGE ================= */
+.rol-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--gray-100);
+  color: var(--gray-700);
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  border: 1px solid var(--gray-300);
+}
+
+/* ================= ESTADOS ================= */
+.rol-loading, .rol-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background-color: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  text-align: center;
+}
+
+.rol-loading-spinner {
+  border: 3px solid var(--gray-200);
+  border-top: 3px solid var(--primary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+.rol-loading-spinner-small {
+  border: 2px solid var(--gray-200);
+  border-top: 2px solid var(--primary-color);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .rol-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .rol-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .rol-content {
+    padding: 1rem;
+  }
+  
+  .rol-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .rol-btn-primary {
+    width: 100%;
+  }
+  
+  .rol-search-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .rol-search-input {
+    min-width: 0;
+  }
+  
+  .rol-filter-group {
+    width: 100%;
+  }
+  
+  .rol-filter-select {
+    min-width: 0;
+    flex: 1;
+  }
+  
+  .rol-modal {
+    max-height: 95vh;
+  }
+  
+  .rol-permissions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .rol-pagination {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .rol-pagination-pages {
+    order: -1;
+    justify-content: center;
+  }
+  
+  .rol-pagination-info {
+    text-align: center;
+  }
+  
+  .rol-modal-footer {
+    flex-direction: column;
+  }
+  
+  .rol-bulk-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .rol-bulk-btn {
+    justify-content: center;
+  }
+  
+  .rol-detail-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .rol-detail-label {
+    min-width: 0;
+  }
+  
+  .rol-permissions-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}

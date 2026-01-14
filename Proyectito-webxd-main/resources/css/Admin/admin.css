@@ -1,0 +1,59 @@
+/* ====== LAYOUT GENERAL ====== */
+.admin-layout {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: #f3f4f6;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ====== SIDEBAR ====== */
+.sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #111827, #1f2937);
+    color: #e5e7eb;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 4px 0 12px rgba(0,0,0,0.15);
+}
+
+.sidebar .title {
+    padding: 22px;
+    font-size: 18px;
+    font-weight: 600;
+    background: rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 22px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+
+.sidebar a i {
+    width: 18px;
+    text-align: center;
+}
+
+.sidebar a:hover {
+    background: rgba(255,255,255,0.08);
+    color: #ffffff;
+    padding-left: 28px;
+}
+
+.sidebar hr {
+    border: none;
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    margin: 12px 0;
+}
+

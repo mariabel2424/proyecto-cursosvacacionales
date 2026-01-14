@@ -1,0 +1,1378 @@
+/* tutor.css - Diseño moderno para gestión de tutores y relaciones */
+
+/* Variables de diseño */
+:root {
+  --primary-color: #3b82f6;
+  --primary-light: #dbeafe;
+  --secondary-color: #10b981;
+  --secondary-light: #d1fae5;
+  --warning-color: #f59e0b;
+  --warning-light: #fef3c7;
+  --danger-color: #ef4444;
+  --danger-light: #fee2e2;
+  --info-color: #8b5cf6;
+  --info-light: #ede9fe;
+  --dark-color: #1f2937;
+  --light-color: #f9fafb;
+  --border-color: #e5e7eb;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --transition: all 0.2s ease-in-out;
+}
+
+/* Contenedor principal */
+.tutor-deportista-container {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.tutor-deportista-content {
+  flex: 1;
+  padding: 1.5rem;
+  margin-left: 250px;
+  min-height: 100vh;
+}
+
+.tutor-deportista-main {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header */
+.tutor-deportista-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.tutor-deportista-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color), var(--info-color));
+}
+
+.tutor-deportista-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tutor-deportista-title svg {
+  color: var(--primary-color);
+  stroke-width: 2.5;
+}
+
+.tutor-deportista-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+/* Botón principal */
+.tutor-deportista-btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 6px -1px rgb(59 130 246 / 0.3);
+}
+
+.tutor-deportista-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgb(59 130 246 / 0.4);
+}
+
+.tutor-deportista-btn-primary:active {
+  transform: translateY(0);
+}
+
+.tutor-deportista-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Tabs */
+.tutor-deportista-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding: 0.25rem;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.tutor-deportista-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+}
+
+.tutor-deportista-tab:hover:not(.active) {
+  background: var(--light-color);
+  color: var(--text-primary);
+}
+
+.tutor-deportista-tab.active {
+  background: linear-gradient(135deg, var(--primary-light), #e0f2fe);
+  color: var(--primary-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.tutor-deportista-tab.active svg {
+  color: var(--primary-color);
+}
+
+.tutor-deportista-tab-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--danger-color);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+/* Estadísticas */
+.tutor-deportista-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tutor-deportista-stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.tutor-deportista-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.tutor-deportista-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary-color), var(--info-color));
+}
+
+.tutor-deportista-stat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tutor-deportista-stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.tutor-deportista-stat-label {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Filtros */
+.tutor-deportista-filters {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.tutor-deportista-filters-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tutor-deportista-search-container {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+.tutor-deportista-search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  transition: var(--transition);
+  background: var(--light-color);
+}
+
+.tutor-deportista-search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgb(59 130 246 / 0.1);
+}
+
+.tutor-deportista-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+.tutor-deportista-filter-select {
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  background: var(--light-color);
+  cursor: pointer;
+  transition: var(--transition);
+  min-width: 160px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+}
+
+.tutor-deportista-filter-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgb(59 130 246 / 0.1);
+}
+
+.tutor-deportista-btn-refresh {
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: white;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tutor-deportista-btn-refresh:hover {
+  background: var(--light-color);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Tabla */
+.tutor-deportista-table-container {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.tutor-deportista-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1000px;
+}
+
+.tutor-deportista-table thead {
+  background: linear-gradient(135deg, var(--primary-light), #e0f2fe);
+}
+
+.tutor-deportista-table th {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.tutor-deportista-table tbody tr {
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.tutor-deportista-table tbody tr:hover {
+  background: var(--light-color);
+}
+
+.tutor-deportista-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.tutor-deportista-table td {
+  padding: 1.25rem 1.5rem;
+  vertical-align: middle;
+}
+
+.tutor-deportista-table-id {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-family: 'SF Mono', Monaco, 'Cascadia Mono', monospace;
+}
+
+.tutor-deportista-info-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tutor-deportista-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.tutor-deportista-avatar.sport {
+  background: var(--secondary-light);
+  color: var(--secondary-color);
+}
+
+.tutor-deportista-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.tutor-deportista-subtext {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Celdas de contacto */
+.tutor-deportista-contact-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tutor-deportista-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.tutor-deportista-contact-item svg {
+  flex-shrink: 0;
+  color: var(--text-secondary);
+}
+
+.tutor-deportista-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+/* Badges */
+.tutor-deportista-badge {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  min-width: 80px;
+}
+
+/* Estados */
+.tutor-deportista-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tutor-deportista-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.tutor-deportista-status-dot.active {
+  background: var(--secondary-color);
+  box-shadow: 0 0 0 3px var(--secondary-light);
+}
+
+.tutor-deportista-status-dot.inactive {
+  background: var(--danger-color);
+  box-shadow: 0 0 0 3px var(--danger-light);
+}
+
+/* Botón toggle principal */
+.tutor-deportista-principal-toggle {
+  display: flex;
+  justify-content: center;
+}
+
+.tutor-deportista-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: white;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tutor-deportista-toggle-btn:hover {
+  border-color: var(--warning-color);
+  color: var(--warning-color);
+}
+
+.tutor-deportista-toggle-btn.principal {
+  border-color: var(--warning-color);
+  background: var(--warning-light);
+  color: var(--warning-color);
+}
+
+.tutor-deportista-toggle-btn.principal:hover {
+  background: #fde68a;
+}
+
+/* Fecha */
+.tutor-deportista-date {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-family: 'SF Mono', Monaco, 'Cascadia Mono', monospace;
+}
+
+/* Acciones */
+.tutor-deportista-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tutor-deportista-action-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--light-color);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+}
+
+.tutor-deportista-action-btn:hover {
+  background: var(--primary-light);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.tutor-deportista-action-btn.activate:hover {
+  background: var(--secondary-light);
+  color: var(--secondary-color);
+}
+
+.tutor-deportista-action-btn.deactivate:hover {
+  background: var(--danger-light);
+  color: var(--danger-color);
+}
+
+.tutor-deportista-action-btn.delete:hover {
+  background: var(--danger-light);
+  color: var(--danger-color);
+}
+
+.tutor-deportista-action-btn:active {
+  transform: translateY(0);
+}
+
+/* Paginación */
+.tutor-deportista-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.tutor-deportista-pagination-info {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.tutor-deportista-pagination-controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.tutor-deportista-pagination-btn {
+  min-width: 40px;
+  height: 40px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: white;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.tutor-deportista-pagination-btn:hover:not(:disabled) {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  background: var(--light-color);
+}
+
+.tutor-deportista-pagination-btn.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.tutor-deportista-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tutor-deportista-pagination-ellipsis {
+  padding: 0 0.5rem;
+  color: var(--text-secondary);
+}
+
+/* Loading */
+.tutor-deportista-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.tutor-deportista-loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.tutor-deportista-loading-text {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* Empty state */
+.tutor-deportista-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.tutor-deportista-empty-state svg {
+  color: var(--border-color);
+  margin-bottom: 1.5rem;
+  stroke-width: 1.5;
+}
+
+.tutor-deportista-empty-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.tutor-deportista-empty-message {
+  color: var(--text-secondary);
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+/* Modal overlay */
+.tutor-deportista-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal */
+.tutor-deportista-modal {
+  background: white;
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.tutor-deportista-modal.large {
+  max-width: 800px;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tutor-deportista-modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+}
+
+.tutor-deportista-modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tutor-deportista-modal-title.warning {
+  color: var(--danger-color);
+}
+
+.tutor-deportista-modal-title.warning svg {
+  color: var(--danger-color);
+}
+
+.tutor-deportista-modal-close {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: var(--light-color);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tutor-deportista-modal-close:hover {
+  background: var(--danger-light);
+  color: var(--danger-color);
+}
+
+.tutor-deportista-modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.tutor-deportista-modal-footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+}
+
+/* Botones secundario y peligro */
+.tutor-deportista-btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: white;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tutor-deportista-btn-secondary:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  background: var(--light-color);
+}
+
+.tutor-deportista-btn-danger {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--danger-color);
+  border-radius: var(--radius-md);
+  background: var(--danger-color);
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tutor-deportista-btn-danger:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgb(239 68 68 / 0.3);
+}
+
+/* Formularios */
+.tutor-deportista-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tutor-deportista-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.tutor-deportista-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tutor-deportista-form-label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tutor-deportista-form-label svg {
+  color: var(--text-secondary);
+  stroke-width: 2;
+}
+
+.tutor-deportista-form-input,
+.tutor-deportista-form-select,
+.tutor-deportista-form-textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  transition: var(--transition);
+  background: white;
+}
+
+.tutor-deportista-form-input:focus,
+.tutor-deportista-form-select:focus,
+.tutor-deportista-form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgb(59 130 246 / 0.1);
+}
+
+.tutor-deportista-form-input.error,
+.tutor-deportista-form-select.error {
+  border-color: var(--danger-color);
+}
+
+.tutor-deportista-form-input.error:focus,
+.tutor-deportista-form-select.error:focus {
+  box-shadow: 0 0 0 3px rgb(239 68 68 / 0.1);
+}
+
+.tutor-deportista-form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.tutor-deportista-form-error {
+  color: var(--danger-color);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* Switch */
+.tutor-deportista-switch {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.tutor-deportista-switch-input {
+  display: none;
+}
+
+.tutor-deportista-switch-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.tutor-deportista-switch-slider {
+  width: 48px;
+  height: 24px;
+  background: var(--border-color);
+  border-radius: 9999px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.tutor-deportista-switch-slider::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: var(--transition);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tutor-deportista-switch-input:checked + .tutor-deportista-switch-label .tutor-deportista-switch-slider {
+  background: var(--secondary-color);
+}
+
+.tutor-deportista-switch-input:checked + .tutor-deportista-switch-label .tutor-deportista-switch-slider::before {
+  transform: translateX(24px);
+}
+
+.tutor-deportista-switch-text {
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.tutor-deportista-form-hint {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+/* Detalles en modal */
+.tutor-deportista-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tutor-deportista-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--light-color);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.tutor-deportista-detail-item:hover {
+  background: white;
+  border-color: var(--primary-color);
+  transform: translateX(4px);
+}
+
+.tutor-deportista-detail-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.tutor-deportista-detail-content {
+  flex: 1;
+}
+
+.tutor-deportista-detail-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.tutor-deportista-detail-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tutor-deportista-detail-meta span {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.tutor-deportista-detail-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--warning-light);
+  color: var(--warning-color);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.tutor-deportista-detail-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Estadísticas en modal */
+.tutor-deportista-stats-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.tutor-deportista-stats-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.tutor-deportista-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tutor-deportista-chart-item {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tutor-deportista-chart-label {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.tutor-deportista-chart-bar {
+  height: 24px;
+  background: var(--light-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.tutor-deportista-chart-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--info-color));
+  border-radius: var(--radius-md);
+  transition: width 1s ease-out;
+}
+
+.tutor-deportista-chart-value {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 40px;
+  text-align: right;
+}
+
+/* Mensaje de advertencia */
+.tutor-deportista-warning-message {
+  text-align: center;
+}
+
+.tutor-deportista-warning-message p {
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.tutor-deportista-warning-details {
+  background: var(--light-color);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.tutor-deportista-warning-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.tutor-deportista-warning-item:last-child {
+  margin-bottom: 0;
+}
+
+.tutor-deportista-warning-item strong {
+  color: var(--text-primary);
+}
+
+.tutor-deportista-warning-item svg {
+  flex-shrink: 0;
+}
+
+.tutor-deportista-warning-alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: var(--danger-light);
+  color: var(--danger-color);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.tutor-deportista-warning-alert svg {
+  color: var(--danger-color);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .tutor-deportista-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+  
+  .tutor-deportista-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tutor-deportista-filters-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .tutor-deportista-search-container {
+    min-width: 100%;
+  }
+  
+  .tutor-deportista-filter-select {
+    width: 100%;
+  }
+  
+  .tutor-deportista-modal.large {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .tutor-deportista-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .tutor-deportista-btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .tutor-deportista-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tutor-deportista-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .tutor-deportista-actions {
+    justify-content: center;
+  }
+  
+  .tutor-deportista-form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .tutor-deportista-pagination {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .tutor-deportista-tab-badge {
+    top: -6px;
+    right: -6px;
+    font-size: 0.625rem;
+    padding: 0.125rem 0.375rem;
+    min-width: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutor-deportista-title {
+    font-size: 1.5rem;
+  }
+  
+  .tutor-deportista-tabs {
+    flex-direction: column;
+  }
+  
+  .tutor-deportista-table-container {
+    margin: 0 -1rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  
+  .tutor-deportista-modal-footer {
+    flex-direction: column;
+  }
+  
+  .tutor-deportista-modal-footer button {
+    width: 100%;
+  }
+  
+  .tutor-deportista-detail-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Animaciones adicionales */
+.tutor-deportista-table-row {
+  animation: fadeInRow 0.3s ease-out;
+  animation-fill-mode: both;
+}
+
+.tutor-deportista-table-row:nth-child(1) { animation-delay: 0.05s; }
+.tutor-deportista-table-row:nth-child(2) { animation-delay: 0.1s; }
+.tutor-deportista-table-row:nth-child(3) { animation-delay: 0.15s; }
+.tutor-deportista-table-row:nth-child(4) { animation-delay: 0.2s; }
+.tutor-deportista-table-row:nth-child(5) { animation-delay: 0.25s; }
+
+@keyframes fadeInRow {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efectos de hover mejorados */
+.tutor-deportista-stat-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.tutor-deportista-stat-card:hover::after {
+  opacity: 1;
+}
+
+.tutor-deportista-stat-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Scrollbar personalizado */
+.tutor-deportista-modal-body::-webkit-scrollbar,
+.tutor-deportista-table-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tutor-deportista-modal-body::-webkit-scrollbar-track,
+.tutor-deportista-table-container::-webkit-scrollbar-track {
+  background: var(--light-color);
+}
+
+.tutor-deportista-modal-body::-webkit-scrollbar-thumb,
+.tutor-deportista-table-container::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+.tutor-deportista-modal-body::-webkit-scrollbar-thumb:hover,
+.tutor-deportista-table-container::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Efectos de focus para accesibilidad */
+.tutor-deportista-action-btn:focus,
+.tutor-deportista-btn-primary:focus,
+.tutor-deportista-btn-secondary:focus,
+.tutor-deportista-btn-danger:focus,
+.tutor-deportista-pagination-btn:focus,
+.tutor-deportista-modal-close:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Estados de carga mejorados */
+.tutor-deportista-loading-spinner-sm {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--border-color);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+/* Transiciones suaves para todo */
+.tutor-deportista-container * {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}

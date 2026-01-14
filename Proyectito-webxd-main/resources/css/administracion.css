@@ -1,0 +1,182 @@
+/* ======== GENERAL ======== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f4f6fb;
+}
+
+.admin-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ======== HEADER ======== */
+.admin-header {
+  background: #5c7cfa;
+  color: white;
+  padding: 18px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* MENÚ ORDENADO */
+.top-menu {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.top-menu button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 15px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.top-menu button:hover {
+  background: rgba(255,255,255,0.2);
+  border-radius: 6px;
+}
+
+.logout-btn {
+  background: #ff4e4e;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* ======== MAIN ======== */
+main {
+  padding: 30px 40px;
+  flex-grow: 1;
+}
+
+/* ======== CARDS ======== */
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 240px;
+  text-align: center;
+  box-shadow: 0px 3px 8px #cfcfcf;
+}
+
+.curso-card {
+  background: #e7efff;
+}
+
+/* ======== TABLE ======== */
+table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+  box-shadow: 0px 3px 8px #c1c1c1;
+}
+
+table th {
+  background: #5c7cfa;
+  color: white;
+  padding: 12px;
+}
+
+table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ======== BUTTONS ======== */
+.btn-view {
+  background: #5c7cfa;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background: #ff4e4e;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background: #ffa645;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-add {
+  background: #4cd57d;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn-report {
+  background: #6a6cff;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+/* ======== MODAL ======== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  width: 420px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0px 4px 15px #0004;
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 25px;
+}

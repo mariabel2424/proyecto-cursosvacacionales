@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /*fuente*/
+  background: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /*pantalla tam*/
+}
+
+.login-horizontal-container {
+  display: flex;
+  background: #fff;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 900px;
+  max-width: 95%;
+  position: relative; /* necesario para posicionar la X dentro del recuadro */
+}
+
+/* Botón X arriba a la derecha */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #f4f6f9;
+  color: #666;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.close-button:hover {
+  background: #e0e4ec;
+  color: #333;
+}
+
+.login-left,
+.login-right {
+  flex: 1;
+  padding: 40px;
+}
+
+.login-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fcfaff; /* cuadro blanco */
+}
+
+.login-left h2 {
+  margin-bottom: 20px;
+  color: #5791b8; /*titulo*/
+  font-size: 28px;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 20px; /*espacio entre campos*/
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #658ea8;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+}
+
+button { /*inicio*/
+  width: 100%;
+  background-color: #da9abfa4;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer; /*cambia su puntero*/
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s; /*transicion mous*/
+}
+
+button:hover {
+  background-color: #2980b9; /*pasar mous*/
+}
+
+.mensaje { /*error o bienven.*/
+  margin-top: 15px;
+  text-align: center;
+  color: #4b6783;
+  font-weight: bold;
+}
+
+.links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.links a {
+  color: #6065a3; /*link de abajo de ingresar*/
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.login-right {
+  background: #cdc9e4; /*cuadro de imagen*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-right img { /*alado derecho*/
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.info-text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.info-text h1 {
+  font-size: 22px;
+  color: #2a3249; /*text mensj*/
+}
+
+.info-text p {
+  color: #0d0a13; /*text aprende*/
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .login-horizontal-container {
+    flex-direction: column;
+  }
+
+  .login-right {
+    display: none;
+  }
+}

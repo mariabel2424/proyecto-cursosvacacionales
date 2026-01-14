@@ -1,0 +1,284 @@
+/* Encapsulamos TODO */
+.home-page {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* NAVBAR */
+.home-page .navbar {
+  background: #1e1e2f;
+  padding: 15px 40px;
+}
+
+.home-page .btn-solid {
+  background: #ff9800;
+  padding: 8px 18px;
+  border-radius: 25px;
+  color: white;
+}
+
+.home-page .btn-outline {
+  border: 2px solid white;
+  padding: 8px 18px;
+  border-radius: 25px;
+  color: white;
+}
+
+/* SLIDER */
+.home-page .slider_section {
+  padding: 120px 80px;
+}
+
+.home-page .slider_section h1 span {
+  color: #ff9800;
+}
+
+/* SERVICES */
+.home-page .services_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.home-page .service_card {
+  padding: 25px;
+  border-radius: 15px;
+  background: #f9f9f9;
+}
+
+/* GALLERY */
+.home-page .gallery_grid {
+  display: flex;
+  gap: 20px;
+}
+
+/* CTA */
+.home-page .cta_section {
+  text-align: center;
+  padding: 60px;
+  background: #1e1e2f;
+  color: white;
+}
+
+/* ===============================
+   ENCAPSULADO GENERAL
+================================ */
+.home-page {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  overflow-x: hidden;
+}
+
+.home-page section {
+  padding: 80px 0;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+.home-page .navbar {
+  background: #1e1e2f;
+  padding: 15px 40px;
+}
+
+.home-page .navbar-brand span {
+  color: #fff;
+  font-weight: 600;
+}
+
+.home-page .navbar-right-actions a {
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.home-page .btn-solid {
+  background: #ff9800;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 25px;
+}
+
+.home-page .btn-outline {
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 25px;
+}
+
+/* ===============================
+   SLIDER / HERO
+================================ */
+.home-page .slider_section {
+  background: linear-gradient(120deg, #1e1e2f, #2d2d44);
+  color: #fff;
+  padding-top: 140px;
+}
+
+.home-page .slider_section h1 {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.home-page .slider_section h1 span {
+  color: #ff9800;
+}
+
+.home-page .slider_section p {
+  margin: 20px 0;
+  line-height: 1.7;
+}
+
+.home-page .actions a {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.home-page .btn-primary {
+  background: #ff9800;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.home-page .btn-secondary {
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+/* ===============================
+   SERVICIOS
+================================ */
+.home-page .services_section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+.home-page .services_section h2 span {
+  color: #ff9800;
+}
+
+.home-page .service_card {
+  background: #f8f8f8;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.home-page .service_card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.1);
+}
+
+/* ===============================
+   GALERÍA
+================================ */
+.home-page .gallery_section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.home-page .gallery_section img {
+  border-radius: 20px;
+  transition: transform .3s ease;
+}
+
+.home-page .gallery_section img:hover {
+  transform: scale(1.05);
+}
+
+/* ===============================
+   CTA
+================================ */
+.home-page .cta_section {
+  background: #ff9800;
+  color: #fff;
+}
+
+.home-page .cta_section h2 {
+  font-weight: 700;
+}
+
+.home-page .cta_section a {
+  background: #1e1e2f;
+  color: #fff;
+  padding: 14px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+/* ===============================
+   CONTACTO
+================================ */
+.home-page .contact_section {
+  background: #1e1e2f;
+  color: #fff;
+  text-align: center;
+}
+
+.home-page .contact_section p {
+  margin: 10px 0;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+/* Tablets */
+@media (max-width: 992px) {
+
+  .home-page .slider_section h1 {
+    font-size: 34px;
+  }
+
+  .home-page section {
+    padding: 60px 0;
+  }
+
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+
+  .home-page .navbar {
+    padding: 15px 20px;
+  }
+
+  .home-page .slider_section {
+    text-align: center;
+  }
+
+  .home-page .slider_section img {
+    margin-top: 30px;
+  }
+
+  .home-page .actions a {
+    display: block;
+    margin: 10px auto;
+  }
+
+  .home-page .service_card {
+    margin-bottom: 30px;
+  }
+
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 480px) {
+
+  .home-page .slider_section h1 {
+    font-size: 28px;
+  }
+
+  .home-page .btn-primary,
+  .home-page .btn-secondary {
+    padding: 10px 22px;
+  }
+
+}

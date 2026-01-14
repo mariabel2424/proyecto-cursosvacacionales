@@ -1,0 +1,740 @@
+/* inscripcion-curso.css - Estilos para el componente de inscripciones a cursos */
+
+.inscripcion-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.inscripcion-content {
+  flex: 1;
+  margin-left: 280px;
+}
+
+.inscripcion-main {
+  padding: 24px;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+/* Header */
+.inscripcion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.inscripcion-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.inscripcion-subtitle {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.inscripcion-header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Botones */
+.inscripcion-btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.inscripcion-btn-primary:hover {
+  background: #2563eb;
+}
+
+.inscripcion-btn-secondary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.inscripcion-btn-secondary:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+/* Mensajes de éxito */
+.success-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #dcfce7;
+  border: 1px solid #86efac;
+  color: #166534;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  animation: slideDown 0.3s ease;
+}
+
+/* Estadísticas */
+.inscripcion-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.inscripcion-stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.2s;
+}
+
+.inscripcion-stat-card:hover {
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
+}
+
+.inscripcion-stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inscripcion-stat-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.inscripcion-stat-label {
+  font-size: 12px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Filtros */
+.inscripcion-filters {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 24px;
+}
+
+.inscripcion-filters-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.inscripcion-filters-row:last-child {
+  margin-bottom: 0;
+  justify-content: space-between;
+}
+
+.inscripcion-search-container {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+.inscripcion-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.inscripcion-search-input {
+  width: 100%;
+  padding: 10px 16px 10px 40px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.inscripcion-search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.inscripcion-filter-select {
+  padding: 10px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  min-width: 180px;
+  background: white;
+  cursor: pointer;
+}
+
+.inscripcion-filter-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.inscripcion-export-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Tabla */
+.inscripcion-table-container {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.inscripcion-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.inscripcion-table th {
+  background: #f8fafc;
+  padding: 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.inscripcion-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.inscripcion-table-row:hover {
+  background: #f8fafc;
+}
+
+/* Estilos específicos para columnas */
+.inscripcion-deportista {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.inscripcion-deportista-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #dbeafe;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inscripcion-deportista-categoria {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.inscripcion-curso {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #475569;
+}
+
+.inscripcion-grupo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #475569;
+}
+
+.inscripcion-grupo-cupo {
+  font-size: 11px;
+  color: #94a3b8;
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+.inscripcion-usuario {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #475569;
+}
+
+.inscripcion-fecha {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #475569;
+  font-size: 13px;
+}
+
+.inscripcion-estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.inscripcion-calificacion-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fef3c7;
+  color: #d97706;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.inscripcion-sin-calificar {
+  font-size: 13px;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.inscripcion-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.inscripcion-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.inscripcion-action-btn:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.inscripcion-action-btn.delete:hover {
+  background: #fee2e2;
+  border-color: #fecaca;
+  color: #ef4444;
+}
+
+/* Paginación */
+.inscripcion-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.inscripcion-pagination-info {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.inscripcion-pagination-controls {
+  display: flex;
+  gap: 4px;
+}
+
+.inscripcion-pagination-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #475569;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+}
+
+.inscripcion-pagination-btn:hover:not(:disabled) {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.inscripcion-pagination-btn.active {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: white;
+}
+
+.inscripcion-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Estados */
+.inscripcion-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.inscripcion-loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+.inscripcion-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.inscripcion-error svg {
+  color: #ef4444;
+  margin-bottom: 16px;
+}
+
+.inscripcion-error h3 {
+  font-size: 18px;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.inscripcion-error p {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.inscripcion-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.inscripcion-empty-state svg {
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.inscripcion-empty-state h3 {
+  font-size: 18px;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.inscripcion-empty-state p {
+  color: #64748b;
+  margin-bottom: 20px;
+  max-width: 400px;
+}
+
+/* Modales (compartidos desde archivo.css) */
+/* Se mantienen los estilos de modal del archivo anterior */
+
+/* Estilos específicos para inscripciones */
+.form-info-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 8px;
+}
+
+.form-info-card h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.form-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.form-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-info-item label {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.form-info-item span {
+  font-size: 13px;
+  color: #475569;
+}
+
+.form-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 8px;
+  padding: 8px;
+  background: #fef2f2;
+  border-radius: 6px;
+  border: 1px solid #fecaca;
+}
+
+/* Detalles específicos */
+.detail-value-with-avatar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.detail-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #dbeafe;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-subtext {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.detail-value-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detail-estado {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.detail-calificacion-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.detail-calificacion-stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.detail-calificacion-text {
+  font-size: 14px;
+  color: #475569;
+}
+
+.detail-comentarios {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #e2e8f0;
+  font-style: italic;
+}
+
+/* Eliminación específica */
+.delete-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px;
+  background: #fef2f2;
+  border-radius: 8px;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  margin: 16px 0;
+  font-size: 14px;
+}
+
+.delete-warning strong {
+  font-weight: 600;
+}
+
+.delete-warning-final {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: #fef2f2;
+  border-radius: 8px;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .inscripcion-content {
+    margin-left: 240px;
+  }
+}
+
+@media (max-width: 992px) {
+  .inscripcion-content {
+    margin-left: 0;
+  }
+  
+  .inscripcion-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .inscripcion-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .inscripcion-main {
+    padding: 16px;
+  }
+  
+  .inscripcion-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .inscripcion-header-actions {
+    width: 100%;
+  }
+  
+  .inscripcion-btn-primary {
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .inscripcion-filters-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .inscripcion-search-container {
+    min-width: 100%;
+  }
+  
+  .inscripcion-filter-select {
+    width: 100%;
+  }
+  
+  .inscripcion-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .inscripcion-pagination {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .inscripcion-pagination-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .inscripcion-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .inscripcion-actions {
+    flex-wrap: wrap;
+  }
+  
+  .inscripcion-action-btn {
+    width: 28px;
+    height: 28px;
+  }
+}

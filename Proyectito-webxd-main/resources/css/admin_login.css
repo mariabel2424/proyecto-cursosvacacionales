@@ -1,0 +1,28 @@
+.alert {
+  background-color: #ffcccc;
+  border: 1px solid #ff9999;
+  color: #cc0000;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.alert ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.alert li {
+  margin: 5px 0;
+}
+
+.mensaje-success {
+  background-color: #ccffcc;
+  border: 1px solid #99ff99;
+  color: #009900;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
